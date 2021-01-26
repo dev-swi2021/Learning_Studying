@@ -5,5 +5,5 @@
 - 발표 연사자 github (https://github.com/choco9966/T-academy-Recommendation)  
 - 케글 (https://www.kaggle.com/chocozzz/t-academy-recommendation2)  
 
-사용 데이터
+### 사용 데이터
 - https://www.kaggle.com/zygmunt/goodbooks-10k
