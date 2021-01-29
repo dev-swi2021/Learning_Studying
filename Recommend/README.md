@@ -1,15 +1,15 @@
 ## 추천 시스템 입문 강의 내용 정리 및 공부  
-### 참고
+#### 참고
 - T academy (https://tacademy.skplanet.com/)  
 - Recommender System KR(https://www.facebook.com/groups/2611614312273351)  
 - 발표 연사자 github (https://github.com/choco9966/T-academy-Recommendation)  
 - 케글 (https://www.kaggle.com/chocozzz/t-academy-recommendation2)  
 - 참고 사이트 (https://bab2min.tistory.com/566)
 
-### 사용 데이터
+#### 사용 데이터
 - https://www.kaggle.com/zygmunt/goodbooks-10k  
 
-## [1강] 추천 시스템 이해  
+### [1강] 추천 시스템 이해  
 
 사용자에게 흥미로울 만한 상품을 제안하는 도구 기술  
 -> 목표 : 어떤 사용자에게 어떤 상품을 어떻게 추천할지에  
@@ -34,7 +34,7 @@
 Apriori 알고리즘 속도 한계 해결  
 설계가 어려움, 지지도 계산이 FP-Tree를 만들고 나서 가능함  
 
-## [2강] 컨텐츠 기반 모델 (TF-IDF 설명)  
+### [2강] 컨텐츠 기반 모델 (TF-IDF 설명)  
 아이템을 벡터 형태로 표현 -> 벡터들간의 유사도를 계산 후 추출  
 
 유사도 함수  
@@ -57,7 +57,7 @@ TF-IDF를 사용하는 이유
 -> 의미없지만 많이 반복되는 단어들을 페널티를 주어 의미있는 단어들이 부각되게 하는 법  
 직관적인 해석이 가능하지만 sparse 행렬이 될 확률이 많다. **(메모리 많이 잡아먹음)**  
 
-## [3강] 컨텐츠 기반 모델 (Word2Vec 설명)
+### [3강] 컨텐츠 기반 모델 (Word2Vec 설명)
 통계기반의 방법 단점  
 -> 대규모 말뭉치는 메모리상의 문제가 발생(sparse형태이기 때문)  
 
