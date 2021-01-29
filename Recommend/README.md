@@ -4,6 +4,7 @@
 - Recommender System KR(https://www.facebook.com/groups/2611614312273351)  
 - 발표 연사자 github (https://github.com/choco9966/T-academy-Recommendation)  
 - 케글 (https://www.kaggle.com/chocozzz/t-academy-recommendation2)  
+- 참고 사이트 (https://bab2min.tistory.com/566)
 
 ### 사용 데이터
 - https://www.kaggle.com/zygmunt/goodbooks-10k  
@@ -33,6 +34,30 @@
 3. FP-Growth 알고리즘  
 Apriori 알고리즘 속도 한계 해결  
 설계가 어려움, 지지도 계산이 FP-Tree를 만들고 나서 가능함  
+
+[2강]
+컨텐츠 기반 모델  
+아이템을 벡터 형태로 표현 -> 벡터들간의 유사도를 계산 후 추출  
+
+유사도 함수  
+-유클리디안 유사도(문서간의 유사도를 계산)  
+= 1 / (유클리디안 거리 + 1e-05(=eps))  
+계산하기 쉽지만, 두 아이템의 분포가 다르거나 범위가 다른 경우 상관성 놓치기 쉬움  
+
+- 코사인 유사도  
+문서간의 유사도를 계산  
+theta값을 가지고 유사도를 계산  
+벡터의 크기가 중요하지 않은 경우에 많이 사용  
+
+- 피어슨 유사도  
+- 자카드 유사도(집합간의 결합관련)  
+
+-> 도메인에 따른 유사도 계산을 해야함  
+
+알고리즘: TF-IDF(텍스트 기반일 경우)  
+TF-IDF를 사용하는 이유  
+-> 의미없지만 많이 반복되는 단어들을 페널티를 주어 의미있는 단어들이 부각되게 하는 법  
+직관적인 해석이 가능하지만 sparse 행렬이 될 확률이 많다. **(메모리 많이 잡아먹음)**  
 
 
  
