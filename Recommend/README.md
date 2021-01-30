@@ -1,4 +1,4 @@
-## 추천 시스템 입문 강의 내용 정리 및 공부  
+# 추천 시스템 입문 강의 내용 정리 및 공부  
 #### 참고
 - T academy (https://tacademy.skplanet.com/)  
 - Recommender System KR(https://www.facebook.com/groups/2611614312273351)  
@@ -9,6 +9,7 @@
 #### 사용 데이터
 - https://www.kaggle.com/zygmunt/goodbooks-10k  
 
+## 발표 정리
 ### [1강] 추천 시스템 이해  
 
 사용자에게 흥미로울 만한 상품을 제안하는 도구 기술  
@@ -113,5 +114,6 @@ SVD, SGD, ALS 등등 있음
 -NDCG: 검색 알고리즘에서 성과를 측정하는 평가 메트릭  
 	CG, DCG를 먼저 이해해야함  
 	NDCG = DCG / iDCG(이상적인 DCG) -> 높으면 높을 수록 좋은 평가지표이다.  
-
-
+	
+	
+### [6강] 코드 테스트
