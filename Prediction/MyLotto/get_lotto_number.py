@@ -1,8 +1,8 @@
-
+import re
 import requests
 from bs4 import BeautifulSoup
 
-class LottoDataset(object):
+class GetLottoDataset(object):
   def __init__(self, data_path):
     """
       가장 최근 로또 당첨 번호를 가져와 db에 저장하는 Class
