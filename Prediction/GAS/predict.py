@@ -13,10 +13,11 @@ import gc
 
 from sklearn.preprocessing import MinMaxScaler
 
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.callbacks import EarlyStopping, ModelCheckpoint
 
+# from keras.models import Sequential
+# from keras.layers import Dense
+# from keras.callbacks import EarlyStopping, ModelCheckpoint
+import model.build_model as build_model
 from sklearn.model_selection import train_test_split
 
 def make_dataset(data, label, window_size=20):
@@ -28,15 +29,15 @@ def make_dataset(data, label, window_size=20):
     label_list.append(np.array(label.iloc[i+window_size]))
   return np.array(feature_list), np.array(label_list)
 
-def build_model():
-  model = Sequential()
-  model.add(LSTM(16,
-               input_shape=(train_feature.shape[1], train_feature.shape[2]),
-               activation="relu",
-               return_sequences=False)
-         )
-  model.add(Dense(1))
-  return model
+# def build_model():
+#   model = Sequential()
+#   model.add(LSTM(16,
+#                input_shape=(train_feature.shape[1], train_feature.shape[2]),
+#                activation="relu",
+#                return_sequences=False)
+#          )
+#   model.add(Dense(1))
+#   return model
 
 def _train(model, train_set, test_set, feature, label):
   train_feature = train_set[feature]
