@@ -22,7 +22,6 @@ data_path = 'path/to/your/dataset'
 # HyperParameter Settings
 EPOCHS = 300
 INPUT_SIZE = 49
-MID_SIZE = 256
 OUTPUT_SIZE = 45
 LEARNING_RATE = 0.05
 RANDOM_SEED = 42
@@ -54,15 +53,9 @@ def eval(model, batch_loader):
     return model(batch_loader)
   
 
-
-
 # 정답 데이터는 그 다음 주 당첨 번호이므로 합쳐서 관리
 lotto_df = pd.read_csv(data_path)
-_lotto_df = pd.merge(lotto_df, lotto_df.loc[1:,:].reset_index(), how='left', left_index=True, right_index=True).drop(columns=['회차_x','index', '회차_y','번호_보너스_y'])
-_lotto_df.rename(columns={'번호_1_x': '번호_1', '번호_2_x': '번호_2', '번호_3_x': '번호_3', '번호_4_x': '번호_4', '번호_5_x': '번호_5', '번호_6_x': '번호_6','번호_보너스_x': '번호_보너스', 
-                          '번호_1_y': '다음번호_1', '번호_2_y': '다음번호_2', '번호_3_y': '다음번호_3', '번호_4_y': '다음번호_4', '번호_5_y': '다음번호_5', '번호_6_y': '다음번호_6'},inplace=True)
-_lotto_df.fillna(0, inplace=True)
-_lotto_df = _lotto_df.astype({'다음번호_1':'int', '다음번호_2': 'int', '다음번호_3':'int', '다음번호_4':'int', '다음번호_5':'int', '다음번호_6':'int'})
+_lotto_df = lotto_df.copy()
 
 # 과적합 방지를 위해 train set, validation set 분리하기
 split_size = int(_lotto_df.shape[0]*0.85)
@@ -89,7 +82,7 @@ for e in range(1, epochs+1):
   e_loss = train(e, network, optimizer, loss_fn, train_dataloader, USE_CUDA)
   aggregated_losses.append(e_loss.item())
   
-  if e % 50 == 1:
+  if e % 25 == 1:
     print(f'epoch: {e:3} loss: {e_loss.item():10.8f')
     lr_schuduler.step()
 
